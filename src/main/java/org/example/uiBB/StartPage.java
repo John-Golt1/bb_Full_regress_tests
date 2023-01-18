@@ -1,6 +1,7 @@
 package org.example.uiBB;
 
 import com.codeborne.selenide.SelenideElement;
+import org.example.uiBB.devices.DevicesPage;
 import org.example.uiBB.questionnaires.QuestionnairesPage;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -20,5 +21,10 @@ public class StartPage {
         questionnaires.click();
         QuestionnairesPage questionnairesPage = page(QuestionnairesPage.class);
         return questionnairesPage;
+    }
+    public DevicesPage getDevices() {
+        devices.click();
+        DevicesPage devicesPage = page(DevicesPage.class);
+        return devicesPage;
     }
 }

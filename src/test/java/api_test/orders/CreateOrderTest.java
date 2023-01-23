@@ -31,13 +31,11 @@ public class CreateOrderTest {
    @Description("Create order and check response")
    @Step("Проверяем, что ордер создается с 200 ок и в ответе есть Mode:mobile + вытаскиваем id для удаления")
     public void createOrderTest() {
-
        orderCreate = generator.getOrderHonor();
       Response responseCreate = step.createOrder(orderCreate);
        assertions.checkCreate(responseCreate);
        OrderResponse orderResponse = responseCreate.getBody().as(OrderResponse.class);
        ordersId = orderResponse.getOrderID().toString();
-
    }
    @Test
    @Description("Create order with invalid devices id")

@@ -52,6 +52,15 @@ public class DevicesTest {
         String expectedName = devicesPage.getTextFromQuestionnaireMobileName();
         Assert.assertEquals("for autotest mobile", expectedName);
     }
+    @Test
+    @Description("application of the questionnaire Robot")
+    public void testActionsQuestionnaireRobot() {
+        devicesPage.firstCheckboxDeviceClick();
+        devicesPage.chooseRobotQuestionnaire();
+        refresh();
+        String expectedName = devicesPage.getTextFromQuestionnaireRobotName();
+        Assert.assertEquals("Default", expectedName);
+    }
     @After
     public void close() {
         Selenide.closeWebDriver();

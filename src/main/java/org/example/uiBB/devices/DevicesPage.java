@@ -53,6 +53,8 @@ public class DevicesPage {
     private SelenideElement autotestWidgetQuestionnaireChoose; //опросник для виджета
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div[@class='p-scrollpanel-content']//label[@for='8bf093bb-e2b1-4c6c-9df2-5ed9a8278a3d']")
     private SelenideElement autotestMobileQiestionnaireChoose;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div[@class='p-scrollpanel-content']//label[@for='31e2e454-5cc7-457a-bd25-c18a001595e2']")
+    private SelenideElement autotestRobotQiestionnaireChoose;
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//button[2]/span[text()='Choose']")
     private SelenideElement chooseQuestionnaireButton;
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//table/tbody/tr[1]/td[12]/a")
@@ -61,10 +63,13 @@ public class DevicesPage {
     private SelenideElement getTextFromCellWidget; //получаем текст из ячейки в таблице(название опросника для widget
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//table/tbody/tr[1]/td[13]/a")
     private SelenideElement getTextFromCellMobile; //получаем текст из ячейки в таблице(название опросника для mobile
+    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//table/tbody/tr[1]/td[14]/a")
+    private SelenideElement getTextFromCellRobot; //получаем текст из ячейки в таблице(название опросника для robot
     @FindBy(how = How.XPATH, using = "//*[@id=\"main-app\"]/div[2]/div/div/div/div/div")
     private SelenideElement successEdit;
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='checkbox'][@aria-checked='true']")
     private SelenideElement checkoxTrue;
+    @Step("click to first checkbox and check it's")
     public void firstCheckboxDeviceClick() {
         firstCheckboxDevices.shouldBe(Condition.visible, Duration.ofSeconds(10));
         firstCheckboxDevices.click();
@@ -73,6 +78,7 @@ public class DevicesPage {
 //    public void actionFalse() {
 //        windowChooseQuestionnaire.shouldBe(Condition.not(Condition.visible));
 //    }
+    @Step("Выбор опросника Instore через Actions")
     public void chooseInstoreQuestionnaire() {
         actionsDropdown.click();
         chooseInstoreQuestionnaire.click();
@@ -80,6 +86,7 @@ public class DevicesPage {
         chooseQuestionnaireButton.click();
         successEdit.shouldBe(Condition.enabled);
     }
+    @Step("Выбор опросника Widget через Actions")
     public void chooseWidgetQuestionnaire() {
         actionsDropdown.click();
         chooseWidgetQuestionnaire.click();
@@ -87,10 +94,19 @@ public class DevicesPage {
         chooseQuestionnaireButton.click();
         successEdit.shouldBe(Condition.enabled);
     }
+    @Step("Выбор опросника Mobile через Actions")
     public void chooseMobileQuestionnaire() {
         actionsDropdown.click();
         chooseMobileQuestionnaire.click();
         autotestMobileQiestionnaireChoose.click();
+        chooseQuestionnaireButton.click();
+        successEdit.shouldBe(Condition.enabled);
+    }
+    @Step("Выбор опросника Robot через Actions")
+    public void chooseRobotQuestionnaire() {
+        actionsDropdown.click();
+        chooseRobotQuestionnaire.click();
+        autotestRobotQiestionnaireChoose.click();
         chooseQuestionnaireButton.click();
         successEdit.shouldBe(Condition.enabled);
     }
@@ -110,6 +126,12 @@ public class DevicesPage {
     public String getTextFromQuestionnaireMobileName() {
         getTextFromCellMobile.shouldBe(Condition.enabled);
         String name = getTextFromCellMobile.getText();
+        return name;
+    }
+    @Step("Get text from cell in a table for robot questionnaire name")
+    public String getTextFromQuestionnaireRobotName() {
+        getTextFromCellRobot.shouldBe(Condition.enabled);
+        String name = getTextFromCellRobot.getText();
         return name;
     }
 

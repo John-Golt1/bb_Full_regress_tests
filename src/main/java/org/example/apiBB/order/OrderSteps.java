@@ -32,7 +32,7 @@ public class OrderSteps extends Client {
     @Description("Создание ордера")
     public Response createOrder(OrderCreate orderCreate) {
         return getSpec()
-                .header("Authorization","Bearer " + token)
+                .headers("Authorization","Bearer " + token, "accept", "application/json", "Content-Type", "application/json")
                 .body(orderCreate)
                 .when()
                 .post(POST_CREATE_ORDER);

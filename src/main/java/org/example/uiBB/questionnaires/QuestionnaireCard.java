@@ -1,5 +1,6 @@
 package org.example.uiBB.questionnaires;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -33,6 +34,13 @@ public class QuestionnaireCard {
     private SelenideElement nextButton;
     @FindBy(how = How.XPATH, using = "//*[@id=\"block0\"]")
     private SelenideElement firstBlock;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"block0\"]//button/span[text()='Question block name']")
+    private SelenideElement questionBlockName;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"block0\"]//button/span[text()='Personal data']")
+    private SelenideElement personalDataBlockName;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"block0\"]//div[@class='block-title']")
+    private SelenideElement firstBlockName; //diag, autograde
+
     public void clickCancel() {
         cancelButton.click();
     }
@@ -50,22 +58,30 @@ public class QuestionnaireCard {
         deleteQuestionBlock.click();
     }
     public void addEMEIBlock() {
-        checkImeiBlock.click();
+        checkImeiBlock.shouldBe(Condition.visible).click();
     }
     public void addQuestionBlock() {
-        questionsBlock.click();
+        questionsBlock.shouldBe(Condition.visible).click();
     }
     public void addDiagBlock() {
-        diagTestBlock.click();
+        diagTestBlock.shouldBe(Condition.visible).click();
     }
     public void addAutogradingBlock() {
-        autogradingBlock.click();
+        autogradingBlock.shouldBe(Condition.visible).click();
     }
     public void addPersonalDataBlock() {
-        personalDataBlock.click();
+        personalDataBlock.shouldBe(Condition.visible).click();
     }
     public SelenideElement getFirstBlock() {
         return firstBlock;
     }
-
+    public SelenideElement getQuestionBlockName() {
+        return questionBlockName;
+    }
+    public SelenideElement getFirstBlockName() {
+        return firstBlockName;
+    }
+    public SelenideElement getPersonalDataBlockName() {
+        return personalDataBlockName;
+    }
 }

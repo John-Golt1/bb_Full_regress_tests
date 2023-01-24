@@ -1,5 +1,6 @@
 package org.example.uiBB.questionnaires;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -32,7 +33,7 @@ public class CreateNewQuestionnaire {
     public QuestionnaireCard createQuestionnaireInstore(String name) {
         nameGenerator(name);
         questionnaireTypeList.click();
-        instoreType.click();
+        instoreType.shouldBe(Condition.visible).click();
         createButton.click();
         QuestionnaireCard questionnaireCard = page(QuestionnaireCard.class);
         return questionnaireCard;
@@ -40,7 +41,7 @@ public class CreateNewQuestionnaire {
     public QuestionnaireCard createQuestionnaireMobile(String name) {
         nameGenerator(name);
         questionnaireTypeList.click();
-        mobileType.click();
+        mobileType.shouldBe(Condition.visible).click();
         createButton.click();
         QuestionnaireCard questionnaireCard = page(QuestionnaireCard.class);
         return questionnaireCard;
@@ -48,7 +49,7 @@ public class CreateNewQuestionnaire {
     public QuestionnaireCard createQuestionnaireWidget(String name) {
         nameGenerator(name);
         questionnaireTypeList.click();
-        widgetType.click();
+        widgetType.shouldBe(Condition.visible).click();
         createButton.click();
         QuestionnaireCard questionnaireCard = page(QuestionnaireCard.class);
         return questionnaireCard;
@@ -56,7 +57,7 @@ public class CreateNewQuestionnaire {
     public QuestionnaireCard createQuestionnaireRobot(String name) {
         nameGenerator(name);
         questionnaireTypeList.click();
-        robotType.click();
+        robotType.shouldBe(Condition.visible).click();
         createButton.click();
         QuestionnaireCard questionnaireCard = page(QuestionnaireCard.class);
         return questionnaireCard;

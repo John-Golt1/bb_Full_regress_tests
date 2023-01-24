@@ -1,7 +1,7 @@
 # bb_Full_regress_tests
 
 <p align="center">
-      <img src="https://i.ibb.co/jHLrfdj/qa-print.jpg" width="726">
+      <https://i.ibb.co/cLZgDmz/download.jpg>
 </p>
 Autotests for NSYS BB. Building structure and architecture from scratch.
 

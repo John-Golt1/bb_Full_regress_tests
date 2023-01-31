@@ -1,5 +1,4 @@
-# bb_Full_regress_tests
-
+# NSYS autotests for regress
 <p align="center">
       <img src="https://i.ibb.co/4NV97ZY/nsys-group-snippet.jpg">
 </p>

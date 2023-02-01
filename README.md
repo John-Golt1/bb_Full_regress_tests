@@ -1,5 +1,5 @@
 # NSYS autotests for regress
-<p align="center">
+<p float="left">
       <img src="https://i.ibb.co/4NV97ZY/nsys-group-snippet.jpg">
       <img src="https://i.ibb.co/N2910jQ/2023-01-31-111859.png">
       <img src="https://i.ibb.co/dK739vt/2023-01-31-112129.png">

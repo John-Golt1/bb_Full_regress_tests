@@ -3,6 +3,7 @@ package api_test.orders;
 import com.codeborne.selenide.commands.Val;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import org.example.apiBB.order.*;
@@ -42,6 +43,18 @@ public class CheckOrderTest {
     public void getOrderFalse() {
         ValidatableResponse responseError = step.getOrder(ordersId + "qwe");
         check.checkGetOrderErrorMessage(responseError);
+    }
+    @Test
+    @Description("Check body Orders/{id}/full-data")
+    public void getOrderInfo() {
+        ValidatableResponse responseInfo = step.getOrderInfo(ordersId);
+        check.checkFullDataOrder(responseInfo, ordersId);
+    }
+    @Test
+    @Description("check orders status after change")
+    public void closeOrder() {
+        ValidatableResponse responseClose = step.changeStatus(ordersId);
+        check.changeStatusOrder(responseClose, ordersId);
     }
     @After
     public void deleteOrderTest() {

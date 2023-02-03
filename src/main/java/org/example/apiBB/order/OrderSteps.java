@@ -1,5 +1,6 @@
 package org.example.apiBB.order;
 
+import com.codeborne.selenide.commands.Val;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
@@ -12,12 +13,12 @@ import org.example.apiBB.user.User;
 import static io.restassured.RestAssured.given;
 
 public class OrderSteps extends Client {
-//    private static final String NSTST_URL = "https://bb.nstst.net/";
     private static final String NSTST_URL = "https://bb.nstst.net/";
     private static final String POST_CREATE_ORDER = "Orders/Create";
     private static final String POST_ACCOUNT_AUTH = "Account/Auth";
     private static final String POST_ORDER_DELETE = "Orders/Delete";
     private static final String GET_ORDERS = "Orders/Get/";
+    private static final String GET_ORDERS_FULL_DATA = "Orders/";
     private String token;
     @Description("Запрос на получение токена")
     public String getToken(User user) {
@@ -58,5 +59,21 @@ public class OrderSteps extends Client {
                 .when()
                 .param("id", ordersId)
                 .get(GET_ORDERS).then();
+    }
+    @Description("Get orders info")
+    public ValidatableResponse getOrderInfo(String ordersId) {
+        return getSpec()
+                .header("Authorization","Bearer " + token)
+                .when()
+                .get(GET_ORDERS_FULL_DATA + ordersId + "/full-data").then();
+    }
+    @Description("Close order")
+    public ValidatableResponse changeStatus(String ordersId) {
+        String json = "{\"OrderStatus\": \"Canceled\"}";
+        return getSpec()
+                .header("Authorization","Bearer " + token)
+                .body(json)
+                .when()
+                .put(GET_ORDERS_FULL_DATA + ordersId + "/status").then();
     }
 }

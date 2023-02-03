@@ -1,8 +1,8 @@
 package org.example.apiBB.user;
 
 public class User {
-    private String CLID = "D8BB705A-99BD-4306-93E0-2A7D5AF91950"; //клид компании ROB
-    private String PIN = "38736";
+    private String CLID;
+    private String PIN;
 
     public User(String CLID, String PIN) {
         this.CLID = CLID;

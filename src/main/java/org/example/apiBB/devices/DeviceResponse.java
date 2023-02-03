@@ -7,6 +7,12 @@ public class DeviceResponse {
         DeviceType = deviceType;
         Storage = storage;
     }
+//    public DeviceResponse(String manufacture, String model) {
+//        Manufacturer = manufacture;
+//        Model = model;
+//    }
+    private String Manufacturer;
+    private String Model;
 
     private String DeviceName;
 

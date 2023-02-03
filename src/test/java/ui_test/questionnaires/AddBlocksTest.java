@@ -27,7 +27,7 @@ public class AddBlocksTest {
     @Before
     @Step("Create page object for tests")
     public void preconditions() {
-        LoginNSYS loginPage = open("https://nstst1.net", LoginNSYS.class);
+        LoginNSYS loginPage = open("https://nstst.net", LoginNSYS.class);
         startPage = loginPage.login("Rob", "Administrator", "Rob_12");
         questionnairesPage = startPage.getQuestionnaires();
         newQuestionnaire = questionnairesPage.addQuestionnaire();

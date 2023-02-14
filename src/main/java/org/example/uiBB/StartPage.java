@@ -22,6 +22,9 @@ public class StartPage {
         QuestionnairesPage questionnairesPage = page(QuestionnairesPage.class);
         return questionnairesPage;
     }
+    public String getElementQuestionnaire(){
+       return questionnaires.getText();
+    }
     public DevicesPage getDevices() {
         devices.click();
         DevicesPage devicesPage = page(DevicesPage.class);

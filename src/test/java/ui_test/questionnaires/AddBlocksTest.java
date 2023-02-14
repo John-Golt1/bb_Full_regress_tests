@@ -15,8 +15,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.is;
 
 public class AddBlocksTest {
     StartPage startPage = new StartPage();

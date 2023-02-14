@@ -28,7 +28,6 @@ public class CreateQuestionnairesTest {
         startPage = loginPage.login("Rob", "Administrator", "Rob_12");
         questionnairesPage = startPage.getQuestionnaires();
         newQuestionnaire = questionnairesPage.addQuestionnaire();
-
     }
     @Test
     public void createQuestionnaireInstore() {

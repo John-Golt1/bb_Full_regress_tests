@@ -1,10 +1,9 @@
 package ui_test;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.example.uiBB.LoginNSYS;
-import org.example.uiBB.StartPage;
+import org.example.ui.LoginNSYS;
+import org.example.ui.StartPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package org.example.uiBB;
+package org.example.ui;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,15 +11,35 @@ public class LoginNSYS {
     private SelenideElement userName;
     @FindBy(how = How.NAME, using = "Login")
     private SelenideElement login;
+    @FindBy(how = How.NAME, using = "Email")
+    private SelenideElement Email;
     @FindBy(how = How.NAME, using = "Password")
     private SelenideElement password;
     @FindBy(how = How.XPATH, using = ".//button[@type='submit']")
     private SelenideElement buttonLogin;
+    @FindBy(how = How.XPATH, using = ".//div[@class='login-version-link']")
+    private SelenideElement buttonTwoFields;
+    @FindBy(how = How.XPATH, using = "//form/div[@role='alert']")
+    private SelenideElement messageError;
+    public String messageError(){
+        return messageError.getText();
+    }
 
     public void setUserName(String clientName) {
         userName.setValue(clientName);
     }
 
+    public void setEmail(String email) {
+        Email.setValue(email);
+    }
+    public StartPage login2(String email, String password){
+        buttonTwoFields.click();
+        setEmail(email);
+        setPassword(password);
+        buttonLogin.click();
+        StartPage startPage = page(StartPage.class);
+        return startPage;
+    }
     public void setLogin(String userName) {
         login.setValue(userName);
     }

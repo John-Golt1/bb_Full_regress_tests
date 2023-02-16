@@ -1,8 +1,7 @@
-package org.example.apiBB.order;
+package org.example.api.order;
 
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import jdk.jshell.VarSnippet;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;

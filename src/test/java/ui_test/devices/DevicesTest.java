@@ -2,9 +2,9 @@ package ui_test.devices;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Description;
-import org.example.uiBB.LoginNSYS;
-import org.example.uiBB.StartPage;
-import org.example.uiBB.devices.DevicesPage;
+import org.example.ui.LoginNSYS;
+import org.example.ui.StartPage;
+import org.example.ui.devices.DevicesPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

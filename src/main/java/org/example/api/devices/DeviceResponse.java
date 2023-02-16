@@ -1,4 +1,4 @@
-package org.example.apiBB.devices;
+package org.example.api.devices;
 
 public class DeviceResponse {
     public DeviceResponse(String deviceName, String ID, String deviceType, String storage) {

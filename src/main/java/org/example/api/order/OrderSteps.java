@@ -1,14 +1,12 @@
-package org.example.apiBB.order;
+package org.example.api.order;
 
-import com.codeborne.selenide.commands.Val;
 import io.qameta.allure.Description;
-import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-import org.example.apiBB.client.Client;
-import org.example.apiBB.user.User;
+import org.example.api.client.Client;
+import org.example.api.user.User;
 
 import static io.restassured.RestAssured.given;
 

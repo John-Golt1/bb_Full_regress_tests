@@ -1,4 +1,4 @@
-package org.example.uiBB.questionnaires;
+package org.example.ui.questionnaires;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

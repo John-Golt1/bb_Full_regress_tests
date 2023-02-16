@@ -3,16 +3,15 @@ package ui_test.questionnaires;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
-import org.example.uiBB.LoginNSYS;
-import org.example.uiBB.StartPage;
-import org.example.uiBB.questionnaires.CreateNewQuestionnaire;
-import org.example.uiBB.questionnaires.QuestionnaireCard;
-import org.example.uiBB.questionnaires.QuestionnairesPage;
+import org.example.ui.LoginNSYS;
+import org.example.ui.StartPage;
+import org.example.ui.questionnaires.CreateNewQuestionnaire;
+import org.example.ui.questionnaires.QuestionnaireCard;
+import org.example.ui.questionnaires.QuestionnairesPage;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -32,19 +31,23 @@ public class CreateQuestionnairesTest {
     @Test
     public void createQuestionnaireInstore() {
         questionnaireCard = newQuestionnaire.createQuestionnaireInstore(name);
+        Assert.assertEquals("Questionnaire" ,questionnaireCard.getTitle());
     }
     @Test
     public void createQuestionnaireWidget() {
         questionnaireCard = newQuestionnaire.createQuestionnaireWidget(name);
+        Assert.assertEquals("Questionnaire" ,questionnaireCard.getTitle());
     }
     @Test
     public void createQuestionnaireMobile() {
         questionnaireCard = newQuestionnaire.createQuestionnaireMobile(name);
+        Assert.assertEquals("Questionnaire" ,questionnaireCard.getTitle());
     }
     @Test
     public void createQuestionnaireRobot() {
         questionnaireCard = newQuestionnaire.createQuestionnaireRobot(name);
         questionnaireCard.clickDeleteBlockRobot();
+        Assert.assertEquals("Questionnaire" ,questionnaireCard.getTitle());
     }
     @After
     @Step("Delete test questionnaire and close browser")

@@ -1,4 +1,4 @@
-package org.example.uiBB.questionnaires;
+package org.example.ui.questionnaires;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

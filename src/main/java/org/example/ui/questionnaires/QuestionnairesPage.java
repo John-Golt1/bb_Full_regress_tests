@@ -1,4 +1,4 @@
-package org.example.uiBB.questionnaires;
+package org.example.ui.questionnaires;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;

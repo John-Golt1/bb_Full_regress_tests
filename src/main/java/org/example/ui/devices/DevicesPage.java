@@ -1,4 +1,4 @@
-package org.example.uiBB.devices;
+package org.example.ui.devices;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

@@ -1,4 +1,4 @@
-package org.example.uiBB.questionnaires;
+package org.example.ui.questionnaires;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -40,6 +40,12 @@ public class QuestionnaireCard {
     private SelenideElement personalDataBlockName;
     @FindBy(how = How.XPATH, using = "//*[@id=\"block0\"]//div[@class='block-title']")
     private SelenideElement firstBlockName; //diag, autograde
+    @FindBy(how = How.XPATH, using = "//*[@id=\"questionnaire-card\"]/div[@class='title']")
+    private SelenideElement titlePage;
+    public String getTitle(){
+        titlePage.shouldBe(Condition.visible);
+        return titlePage.getText();
+    }
 
     public void clickCancel() {
         cancelButton.click();

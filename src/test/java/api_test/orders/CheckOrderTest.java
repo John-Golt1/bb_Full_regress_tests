@@ -1,13 +1,11 @@
 package api_test.orders;
 
-import com.codeborne.selenide.commands.Val;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
-import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import org.example.apiBB.order.*;
-import org.example.apiBB.user.User;
+import org.example.api.order.*;
+import org.example.api.user.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

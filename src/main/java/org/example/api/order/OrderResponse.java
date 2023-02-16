@@ -1,4 +1,4 @@
-package org.example.apiBB.order;
+package org.example.api.order;
 
 public class OrderResponse {
     private Order order;

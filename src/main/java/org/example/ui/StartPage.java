@@ -1,8 +1,8 @@
-package org.example.uiBB;
+package org.example.ui;
 
 import com.codeborne.selenide.SelenideElement;
-import org.example.uiBB.devices.DevicesPage;
-import org.example.uiBB.questionnaires.QuestionnairesPage;
+import org.example.ui.devices.DevicesPage;
+import org.example.ui.questionnaires.QuestionnairesPage;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 

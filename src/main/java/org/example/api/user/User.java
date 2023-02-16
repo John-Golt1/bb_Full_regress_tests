@@ -1,4 +1,4 @@
-package org.example.apiBB.user;
+package org.example.api.user;
 
 public class User {
     private String CLID;

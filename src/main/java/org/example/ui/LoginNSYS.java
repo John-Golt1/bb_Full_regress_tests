@@ -15,9 +15,9 @@ public class LoginNSYS {
     private SelenideElement Email;
     @FindBy(how = How.NAME, using = "Password")
     private SelenideElement password;
-    @FindBy(how = How.XPATH, using = ".//button[@type='submit']")
+    @FindBy(how = How.CSS, using = "button[title='Login']")
     private SelenideElement buttonLogin;
-    @FindBy(how = How.XPATH, using = ".//div[@class='login-version-link']")
+    @FindBy(how = How.CSS, using = ".login-version-link")
     private SelenideElement buttonTwoFields;
     @FindBy(how = How.XPATH, using = "//form/div[@role='alert']")
     private SelenideElement messageError;

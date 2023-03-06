@@ -9,14 +9,13 @@ import org.openqa.selenium.support.How;
 import static com.codeborne.selenide.Selenide.page;
 
 public class StartPage {
-    @FindBy(how = How.XPATH, using = "//*[@id=\"menu\"]/li[2]/a")
+    @FindBy(how = How.CSS, using = "a[href$='Questionnaire#']")
     private SelenideElement questionnaires;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"menu\"]/li[3]/a")
+    @FindBy(how = How.CSS, using = "a[href$='Categories#']")
     private SelenideElement categories;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"menu\"]/li[4]/a")
+    @FindBy(how = How.CSS, using = "a[href$='Devices#']")
     private SelenideElement devices;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"menu\"]/li[5]/a")
-    private SelenideElement preferences;
+
     public QuestionnairesPage getQuestionnaires() {
         questionnaires.click();
         QuestionnairesPage questionnairesPage = page(QuestionnairesPage.class);

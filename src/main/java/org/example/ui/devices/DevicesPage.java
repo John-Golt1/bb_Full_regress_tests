@@ -9,43 +9,43 @@ import org.openqa.selenium.support.How;
 import java.time.Duration;
 
 public class DevicesPage {
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//button[1]/span[2][text()='Add Devices']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Add Devices']")
     private SelenideElement addDeviceButton;
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[1]/table/tbody/tr[1]/td[1]/div")
     private SelenideElement firstCheckboxDevices;
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[1]/table/tbody/tr[1]/td[2]/div")
     private SelenideElement secondCheckboxDevices;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]/div/div[2]/div[1]/div/button[2]/span[1]")
+    @FindBy(how = How.CLASS_NAME, using = "pi pi-filter p-button-icon p-button-icon-left")
     private SelenideElement filterButton;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div[@class='p-dropdown p-component p-inputwrapper p-inputwrapper-filled']")
+    @FindBy(how = How.XPATH, using = "//span[@class='p-dropdown-label p-inputtext']")
     private SelenideElement chooseColumnFilter;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div[@class='p-dropdown-items-wrapper']/ul/li[1]")
+    @FindBy(how = How.XPATH, using = "//li[@class='p-dropdown-item'][1]")
     private SelenideElement firstElementDropDownChooseColumn;
-    @FindBy(how = How.XPATH, using = "///*[@id=\"devices-page\"]//div[@role='dialog']//div[@class='p-dropdown p-component p-inputwrapper']")
+    @FindBy(how = How.XPATH, using = "[class='p-dropdown p-component p-inputwrapper']")
     private SelenideElement filterType;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div/ul/li[@aria-label='Contains']")
+    @FindBy(how = How.CSS, using = "[aria-label=Contains]")
     private SelenideElement containsType;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div//input[@class='p-column-filter p-inputtext p-component']")
+    @FindBy(how = How.XPATH, using = "//label[text()='Enter value']")
     private SelenideElement enterValue;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div/button[@class='p-dialog-header-icon p-dialog-header-close p-link']")
+    @FindBy(how = How.CLASS_NAME, using = "p-dialog-header-close-icon pi pi-times")
     private SelenideElement closeIconWindowFilter;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div/button[2]")
+    @FindBy(how = How.CLASS_NAME, using = "p-button-medium-large p-button-outlined p-mr-2 p-button p-component")
     private SelenideElement cancelFilterButton;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div/button[3]")
+    @FindBy(how = How.CLASS_NAME, using = "p-button-medium-large p-button p-component")
     private SelenideElement applyFilterButton;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div/button/i[@class='pi pi-chevron-down']")
+    @FindBy(how = How.CLASS_NAME, using = "pi pi-chevron-down")
     private SelenideElement actionsDropdown;
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]/div/div[2]/div[3]/div")
     private SelenideElement windowChooseQuestionnaire;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div/div[@class='p-menu p-component p-menu-overlay']/ul/li[1]")
+    @FindBy(how = How.XPATH, using = "//span[@class='p-menuitem-text'][text()='Choose Widget questionnaire']")
     private SelenideElement chooseWidgetQuestionnaire;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div/div[@class='p-menu p-component p-menu-overlay']/ul/li[2]")
+    @FindBy(how = How.XPATH, using = "//span[@class='p-menuitem-text'][text()='Choose In-store questionnaire']")
     private SelenideElement chooseInstoreQuestionnaire;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div/div[@class='p-menu p-component p-menu-overlay']/ul/li[3]")
+    @FindBy(how = How.XPATH, using = "//span[@class='p-menuitem-text'][text()='Choose Mobile questionnaire']")
     private SelenideElement chooseMobileQuestionnaire;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div/div[@class='p-menu p-component p-menu-overlay']/ul/li[4]")
+    @FindBy(how = How.XPATH, using = "//span[@class='p-menuitem-text'][text()='Choose Robot questionnaire']")
     private SelenideElement chooseRobotQuestionnaire;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div/div[@class='p-menu p-component p-menu-overlay']/ul/li[5]")
+    @FindBy(how = How.XPATH, using = "//span[@class='p-menuitem-text'][text()='Choose Reward Type']")
     private SelenideElement chooseRewardType;
     @FindBy(how = How.XPATH, using = "//*[@id=\"devices-page\"]//div[@role='dialog']//div[@class='p-scrollpanel-content']/div//label[@for='0a241f09-39b8-4479-9e15-6c199bb0c3e8']")
     private SelenideElement autotestInstoreQuestionnaireChoose; //опросник для инстор

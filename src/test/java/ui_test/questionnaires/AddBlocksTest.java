@@ -13,18 +13,39 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import ui_test.BaseTest;
+import ui_test.BrowserType;
+
+import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.open;
+import static ui_test.BrowserType.FOX_BROWSER;
+import static ui_test.BrowserType.GOOGLE_CHROME;
 
-public class AddBlocksTest {
+@RunWith(Parameterized.class)
+public class AddBlocksTest extends BaseTest {
+    BrowserType browserType;
     StartPage startPage = new StartPage();
     CreateNewQuestionnaire newQuestionnaire;
     QuestionnairesPage questionnairesPage;
     QuestionnaireCard questionnaireCard;
+    public AddBlocksTest(BrowserType type){
+        this.browserType = type;
+    }
+    @Parameterized.Parameters
+    public static Object[][] getData(){
+        return new Object[][]{
+                {GOOGLE_CHROME},
+                {FOX_BROWSER}
+        };
+    }
     private String name = "test";
     @Before
     @Step("Create page object for tests")
-    public void preconditions() {
+    public void preconditions() throws IOException {
+        initBrowser(browserType);
         LoginNSYS loginPage = open("https://nstst.net", LoginNSYS.class);
         startPage = loginPage.login("Rob", "Administrator", "Rob_12");
         questionnairesPage = startPage.getQuestionnaires();

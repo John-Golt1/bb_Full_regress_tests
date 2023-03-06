@@ -18,7 +18,7 @@ public class DevicesTest {
     DevicesPage devicesPage;
     @Before
     public void preconditions() {
-        LoginNSYS loginPage = open("https://nstst1.net", LoginNSYS.class);
+        LoginNSYS loginPage = open("https://nstst.net", LoginNSYS.class);
         startPage = loginPage.login("Rob", "Administrator", "Rob_12");
         devicesPage = startPage.getDevices();
     }
